@@ -10,10 +10,12 @@ export default {
 </script>
 <template lang="">
   <div class="container">
-    <div class='banner'>Carte trovate</div>
-    <div class="card-container"></div>
+
+        <div class='banner'>Carte trovate</div>
+        <CardList />
+
   </div>
-  <CardList />
+  
 </template>
 <style lang="scss" scoped>
     .container{
@@ -27,22 +29,15 @@ export default {
         justify-content: center;
 
         .banner{
-            width: calc(100% - 40px);
+            width: calc(100%);
             height: 60px;
             background-color: rgb(31, 31, 31);
-            margin-bottom: -10px;
             color: white;
             display: flex;
             align-items: center;
             padding: 20px;
             font-size: 20px;
             font-family: sans-serif;
-        }
-        .card-container{
-            width: calc(100% / 5 - 40px);
-            height: 100px;
-            background-color: red;
-            margin: 10px 20px;
         }
     }
 </style>
