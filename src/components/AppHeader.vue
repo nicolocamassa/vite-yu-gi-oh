@@ -1,7 +1,22 @@
 <script>
-export default {};
+export default {
+  name: 'AppHeader',
+  data(){
+    return{
+
+    }
+  }
+};
 </script>
 <template lang="">
-  <div></div>
+  <header>
+
+  </header>
 </template>
-<style lang=""></style>
+<style lang="scss" scoped>
+  header{
+    background-color: white;
+    width: 100%;
+    height: 100px;
+  }
+</style>
