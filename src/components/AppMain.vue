@@ -1,22 +1,19 @@
 <script>
+import CardList from './CardList.vue';
+
 export default {
-    name: 'AppMain'
+    name: 'AppMain',
+    components:{
+        CardList
+    },
 };
 </script>
 <template lang="">
   <div class="container">
     <div class='banner'>Carte trovate</div>
     <div class="card-container"></div>
-    <div class="card-container"></div>
-    <div class="card-container"></div>
-    <div class="card-container"></div>
-    <div class="card-container"></div>
-    <div class="card-container"></div>
-    <div class="card-container"></div>
-    <div class="card-container"></div>
-    <div class="card-container"></div>
-    <div class="card-container"></div>
   </div>
+  <CardList />
 </template>
 <style lang="scss" scoped>
     .container{
