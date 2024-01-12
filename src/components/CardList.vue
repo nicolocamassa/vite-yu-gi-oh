@@ -2,6 +2,8 @@
 import axios from "axios";
 import { store } from "../store";
 import CardComponent from "./CardComponent.vue";
+import AppSearch from './AppSearch.vue';
+
 export default {
   name: "CardList",
   data() {
@@ -10,14 +12,27 @@ export default {
     };
   },
   components:{
-    CardComponent
+    CardComponent,
+    AppSearch
   },
   methods: {
     getList() {
-      axios.get(store.endpoint).then((response) => {
+      let api = store.endpoint;
+
+      if(store.search !== ''){
+        api += `&archetype=${store.search}`
+      }
+
+      console.log(api)
+
+      axios.get(api).then((response) => {
         this.store.cardList = response.data.data;
       });
     },
+    searchedCard(){
+      this.getList();
+      
+    }
   },
   created() {
     this.getList();
@@ -25,7 +40,8 @@ export default {
 };
 </script>
 <template lang="">
-  <div class="row">
+    <AppSearch @searched='searchedCard'/>
+  <div class="row" >
     <CardComponent v-for="(card, index) in store.cardList" :key='index' :card='card' />
   </div>
   

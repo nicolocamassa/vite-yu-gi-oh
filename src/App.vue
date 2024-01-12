@@ -2,7 +2,6 @@
 import AppHeader from './components/AppHeader.vue';
 import AppLoader from './components/AppLoader.vue';
 import CardList from './components/CardList.vue';
-import AppSearch from './components/AppSearch.vue';
 
 
 import { store } from './store'
@@ -12,11 +11,19 @@ export default {
     AppHeader,
     AppLoader,
     CardList,
-    AppSearch
   },
   data() {
     return {
       store
+    }
+  }, 
+  methods: {
+    searchedCard(){
+
+      console.log(store.search)
+      if(store.search !== ''){
+        store.endpoint += `&archetype=${store.search}`
+      }
     }
   }
 };
@@ -25,7 +32,6 @@ export default {
   <AppLoader v-if='!this.store.loading'/>
   <AppHeader v-else/>
   
-  <AppSearch />
 
   <div class="container">
   <div class='banner'>Carte trovate</div>

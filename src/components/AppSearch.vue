@@ -22,14 +22,17 @@ export default {
 </script>
 <template lang="">
   <div>
-    <!-- TODO: aggiungi select e option -->
-    <select>
-      <option value="" v-for="(archetype, index) in store.archetype" :key='index'>{{ archetype.archetype_name }}</option>
+    <select v-model='store.search' @change="$emit('searched')">
+      <option value="">Tutti</option>
+      <option
+        :value="archetype.archetype_name"
+        v-for="(archetype, index) in store.archetype"
+        :key="index"
+      >
+        {{ archetype.archetype_name }}
+      </option>
     </select>
-    <div >
-      
-    </div>
-    <input type="button" value="Cerca" />
+
   </div>
 </template>
 <style lang="scss" scoped>
