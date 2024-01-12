@@ -40,8 +40,9 @@ export default {
 };
 </script>
 <template lang="">
-    <AppSearch @searched='searchedCard'/>
+    
   <div class="row" >
+    <AppSearch @searched='searchedCard'/>
     <CardComponent v-for="(card, index) in store.cardList" :key='index' :card='card' />
   </div>
   
@@ -53,6 +54,7 @@ export default {
         height: 100%;
         display: flex;
         flex-wrap: wrap;
-        
+        margin-top: 100px;
     }
+
 </style>

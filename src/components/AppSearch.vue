@@ -45,7 +45,7 @@ div {
 
   select {
     position: absolute;
-    bottom: 20px;
+    top: -100px;
     padding: 0 10px;
     height: 40px;
   }
