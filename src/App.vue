@@ -18,13 +18,6 @@ export default {
     return {
       store
     }
-  }, methods: {
-    getList() {
-      axios.get(store.endpoint).then((response) => {
-        this.store.cardList = response.data.data;
-        this.store.loading = false;
-      });
-    },
   }
 };
 </script>
