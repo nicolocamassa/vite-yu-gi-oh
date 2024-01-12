@@ -34,7 +34,9 @@ export default {
   
 
   <div class="container">
-  <div class='banner'>Carte trovate</div>
+  <div class='banner' v-if='store.cardList.length > 0'>{{ store.cardList.length }} carte trovate</div>
+  <div class='banner' v-else>Non sono state trovate carte</div>
+
 
 <CardList />
 

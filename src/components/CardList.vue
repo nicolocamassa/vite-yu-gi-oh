@@ -23,8 +23,6 @@ export default {
         api += `&archetype=${store.search}`
       }
 
-      console.log(api)
-
       axios.get(api).then((response) => {
         this.store.cardList = response.data.data;
       });
